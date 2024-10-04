@@ -38,7 +38,6 @@ describe('ClassValidatorFields integration tests', () => {
         'price must be a number conforming to the specified constraints',
       ],
     });
-    console.log(validator.errors);
   });
   it('Should validate with erros', () => {
     const validator = new StubClassValidatorFields();
