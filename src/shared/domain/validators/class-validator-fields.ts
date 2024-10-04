@@ -7,15 +7,15 @@ import {
 export abstract class ClassValidatorFields<PropsValidated>
   implements ValidatorFieldsInterface<PropsValidated>
 {
-  erros: FieldsErrors = null;
+  errors: FieldsErrors = null;
   validate(data: any): boolean {
     const errors = validateSync(data);
 
     if (errors.length) {
-      this.erros = {};
+      this.errors = {};
       for (const error of errors) {
         const field = error.property;
-        this.erros[field] = Object.values(error.constraints);
+        this.errors[field] = Object.values(error.constraints);
       }
     } else {
       this.validatedData = data;
