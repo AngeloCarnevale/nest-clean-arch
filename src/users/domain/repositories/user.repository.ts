@@ -1,8 +1,8 @@
 import { UserEntity } from '../entities/user.entity';
-import { SearcheableRepositoryInterface } from '@/shared/domain/repositories/searcheable-repository-contracts';
+import { SearchableRepositoryInterface } from '@/shared/domain/repositories/searchable-repository-contracts';
 
 export interface UserRepository
-  extends SearcheableRepositoryInterface<UserEntity, any, any> {
+  extends SearchableRepositoryInterface<UserEntity, any, any> {
   findByEmail(email: string): Promise<UserEntity>;
   emailExists(email: string): Promise<void>;
 }

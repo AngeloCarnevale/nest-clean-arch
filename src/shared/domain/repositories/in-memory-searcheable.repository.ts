@@ -1,10 +1,10 @@
 import { Entity } from '../entities/entity';
 import { InMemoryRepository } from './in-memory.repository';
-import { SearcheableRepositoryInterface } from './searcheable-repository-contracts';
+import { SearchableRepositoryInterface } from './searchable-repository-contracts';
 
 export abstract class InMemorySearcheableRepository<E extends Entity>
   extends InMemoryRepository<E>
-  implements SearcheableRepositoryInterface<E, any, any>
+  implements SearchableRepositoryInterface<E, any, any>
 {
   search(props: any): Promise<any> {}
 }
